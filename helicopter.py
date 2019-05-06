@@ -70,6 +70,9 @@ class HelicopterGame(App):
                 wall.destroy()
                 Walls((self.width, self.height - 100), self.wallspeed)
         self.wallspeed += 0.001
+        
+        if self.player1.collidingWithSprites(Walls):
+            self.player1.destroy()
 
 myapp = HelicopterGame()
 myapp.run()
