@@ -19,11 +19,11 @@ class Walls(Sprite):
     
     def __init__(self, position):
         super().__init__(Walls.rect, position)
-        self.vx = -0.1
+        self.vx = -0.5
         
     def step(self):
         self.x += self.vx
-        self.vx += 0.01
+        self.vx += 0.05
 
 class Helicopter(Sprite):
     # Create asset
