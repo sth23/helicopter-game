@@ -43,3 +43,6 @@ class HelicopterGame(App):
         
     def step(self):
         self.player1.step()
+
+myapp = HelicopterGame()
+myapp.run()
