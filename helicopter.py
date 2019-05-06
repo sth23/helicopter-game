@@ -27,7 +27,7 @@ class Helicopter(Sprite):
         HelicopterGame.listenKeyEvent("keyup", "up arrow", self.fall)
         
     def lift(self, event):
-        self.vy += -0.1
+        self.vy += -0.15
         self.deltavy = 0
         
     def fall(self, event):
