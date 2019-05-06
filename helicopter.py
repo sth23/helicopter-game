@@ -18,7 +18,7 @@ class Walls(Sprite):
     rect = RectangleAsset(100, 100, noline, black)
     
     def __init__(self, position):
-        super().__init__(Ceiling.rect, position)
+        super().__init__(Walls.rect, position)
         self.vx = -0.1
         
     def step(self):
