@@ -68,6 +68,7 @@ class HelicopterGame(App):
                 Walls((self.width, 0), self.wallspeed)
                 Walls((self.width, self.height - 100), self.wallspeed)
         self.wallspeed += 0.005
+        print(len(self.getSpritesbyClass(Walls)))
 
 myapp = HelicopterGame()
 myapp.run()
