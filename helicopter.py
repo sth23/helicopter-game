@@ -17,9 +17,9 @@ class Walls(Sprite):
     noline = LineStyle(0,black)
     rect = RectangleAsset(100, 100, noline, black)
     
-    def __init__(self, position):
+    def __init__(self, position, speed):
         super().__init__(Walls.rect, position)
-        self.vx = -0.1
+        self.vx = -speed
         
     def step(self):
         self.x += self.vx
@@ -54,8 +54,8 @@ class HelicopterGame(App):
     def __init__(self):
         super().__init__()
         self.player1 = Helicopter((self.width/2, self.height/2))
-        Walls((self.width - 100, 0))
-        Walls((self.width - 100, self.height - 100))
+        Walls((self.width - 100, 0),5)
+        Walls((self.width - 100, self.height - 100),5)
         
     def step(self):
         self.player1.step()
