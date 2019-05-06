@@ -55,6 +55,7 @@ class HelicopterGame(App):
         super().__init__()
         self.player1 = Helicopter((self.width/2, self.height/4))
         self.wallspeed = 3
+        self.count = 0
         for x in range(0, self.width//100 + 2):
             Walls((x * 100, 0), self.wallspeed)
             Walls((x * 100, self.height - 100), self.wallspeed)
@@ -65,14 +66,16 @@ class HelicopterGame(App):
             wall.step()
             if wall.x < -100 and wall.y < self.height/2:
                 wall.destroy()
-                Walls((self.width, 0), self.wallspeed)
+                Walls((self.width, self.count), self.wallspeed)
             elif wall.x < -100 and wall.y > self.height/2:
                 wall.destroy()
-                Walls((self.width, self.height - 100), self.wallspeed)
+                Walls((self.width, self.height - 100 - self.count), self.wallspeed)
         self.wallspeed += 0.001
         
         if self.player1.collidingWithSprites(Walls):
             self.player1.destroy()
+            
+        self.count += 1
 
 myapp = HelicopterGame()
 myapp.run()
