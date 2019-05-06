@@ -66,11 +66,11 @@ class HelicopterGame(App):
             wall.step()
             if wall.x < -100 and wall.y < self.height/2:
                 wall.destroy()
-                Walls((self.width, 0.01 * random.randint(0, self.count)), self.wallspeed)
+                Walls((self.width, 0.02 * random.randint(0, self.count)), self.wallspeed)
             elif wall.x < -100 and wall.y > self.height/2:
                 wall.destroy()
-                Walls((self.width, self.height - 100 - 0.01 * random.randint(0, self.count)), self.wallspeed)
-        self.wallspeed += 0.001
+                Walls((self.width, self.height - 100 - 0.02 * random.randint(0, self.count)), self.wallspeed)
+        self.wallspeed += 0.0005
         
         if self.player1.collidingWithSprites(Walls):
             self.player1.destroy()
