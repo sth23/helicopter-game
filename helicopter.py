@@ -23,7 +23,6 @@ class Walls(Sprite):
         
     def step(self):
         self.x += self.vx
-        self.vx += 0.05
 
 class Helicopter(Sprite):
     # Create asset
