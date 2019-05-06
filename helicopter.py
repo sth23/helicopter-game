@@ -61,6 +61,8 @@ class HelicopterGame(App):
         self.player1.step()
         for wall in self.getSpritesbyClass(Walls):
             wall.step()
+            if wall.x < 0:
+                wall.destroy()
 
 myapp = HelicopterGame()
 myapp.run()
