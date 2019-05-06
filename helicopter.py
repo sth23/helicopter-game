@@ -53,7 +53,7 @@ class Helicopter(Sprite):
 class HelicopterGame(App):
     def __init__(self):
         super().__init__()
-        self.player1 = Helicopter((self.width/2, self.height/2))
+        self.player1 = Helicopter((self.width*3/4, self.height/2))
         self.wallspeed = 3
         for x in range(0, self.width//100 + 2):
             Walls((x * 100, 0), self.wallspeed)
