@@ -21,6 +21,7 @@ class Helicopter(Sprite):
         super().__init__(Helicopter.rect, position)
         self.vy = 0
         self.vx = 0
+        self.deltavy = -0.1
         
         HelicopterGame.listenKeyEvent("keydown", "up arrow", self.lift)
         HelicopterGame.listenKeyEvent("keyup", "up arrow", self.fall)
