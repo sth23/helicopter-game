@@ -69,7 +69,7 @@ class HelicopterGame(App):
             elif wall.x < -100 and wall.y > self.height/2:
                 wall.destroy()
                 Walls((self.width, self.height - 100), self.wallspeed)
-        self.wallspeed += 0.005
+        self.wallspeed += 0.001
 
 myapp = HelicopterGame()
 myapp.run()
