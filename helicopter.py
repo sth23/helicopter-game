@@ -11,6 +11,20 @@ from ggame import App, RectangleAsset, CircleAsset, Sprite, LineStyle, Color
 import math
 import random
 
+class Walls(Sprite):
+    # Create asset
+    black = Color(0,1)
+    noline = LineStyle(0,black)
+    rect = RectangleAsset(100, 100, noline, black)
+    
+    def __init__(self, position):
+        super().__init__(Ceiling.rect, position)
+        self.vx = -0.1
+        
+    def step(self):
+        self.x += self.vx
+        self.vx += 0.01
+
 class Helicopter(Sprite):
     # Create asset
     black = Color(0,1)
@@ -41,6 +55,8 @@ class HelicopterGame(App):
     def __init__(self):
         super().__init__()
         self.player1 = Helicopter((self.width/2, self.height/2))
+        Walls((self.width - 100, 0))
+        Walls((self.width - 100, self.height - 100))
         
     def step(self):
         self.player1.step()
