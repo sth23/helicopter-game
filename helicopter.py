@@ -55,7 +55,7 @@ class HelicopterGame(App):
         super().__init__()
         self.player1 = Helicopter((self.width/2, self.height/2))
         self.wallspeed = 3
-        for x in range(0, self.width//100 + 1):
+        for x in range(0, self.width//100 + 2):
             Walls((x * 100, 0), self.wallspeed)
             Walls((x * 100, self.height - 100), self.wallspeed)
         
