@@ -22,8 +22,8 @@ class Helicopter(Sprite):
         self.vy = 0
         self.vx = 0
         
-        Helicopter.listenKeyEvent("keydown", "up arrow", self.lift)
-        Helicopter.listenKeyEvent("keyup", "up arrow", self.fall)
+        HelicopterGame.listenKeyEvent("keydown", "up arrow", self.lift)
+        HelicopterGame.listenKeyEvent("keyup", "up arrow", self.fall)
         
     def lift(self, event):
         self.vy += 0.05
