@@ -76,6 +76,7 @@ class HelicopterGame(App):
             self.player1.destroy()
             
         self.count += 1
+        print("Score: " + str(self.count))
 
 myapp = HelicopterGame()
 myapp.run()
