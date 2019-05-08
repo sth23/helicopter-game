@@ -56,6 +56,7 @@ class HelicopterGame(App):
         self.player1 = Helicopter((self.width/6, self.height/4))
         self.wallspeed = 3
         self.count = 0
+        self.score = 0
         for x in range(0, self.width//100 + 2):
             Walls((x * 100, 0), self.wallspeed)
             Walls((x * 100, self.height - 100), self.wallspeed)
@@ -67,6 +68,7 @@ class HelicopterGame(App):
             if wall.x < -100 and wall.y < self.height/2:
                 wall.destroy()
                 Walls((self.width, 0.05 * random.randint(0, self.count)), self.wallspeed)
+                self.score += 10
             elif wall.x < -100 and wall.y > self.height/2:
                 wall.destroy()
                 Walls((self.width, self.height - 100 - 0.05 * random.randint(0, self.count)), self.wallspeed)
@@ -76,7 +78,8 @@ class HelicopterGame(App):
             self.player1.destroy()
             
         self.count += 1
-        print("Score: " + str(self.count))
+        
+        print("Score: " + str(self.score))
 
 myapp = HelicopterGame()
 myapp.run()
